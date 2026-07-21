@@ -46,7 +46,7 @@ function ValidarInformacion() {
         });
         return;
     }
-    if (!/^[a-zA-Z]+$/.test(Nombre)) {
+    if (!/^[a-zA-Z]+$/.test(nombre)) {
         console.log("El nombre debe tener letras")
         Swal.fire({
             icon: "error",

@@ -25,12 +25,14 @@ function ValidarInformacion() {
             ${marca} \n
             ${UnidadDeMedida} \n`
         );
-        if (!/^[a-zA-Z]+$/.test(categoria)) {
-            console.log("La Categoria debe contener letras")
-            Swal.fire("La categoria debe tener letras");
+        if (!/^\d+$/.test(codigo)) {
+            Swal.fire({
+                title: "El codigo del producto debe contener numeros",
+                icon: "error"
+            });
             return;
         }
-        if (!/^[a-zA-Z]+$/.test(Nombre)) {
+         if (!/^[a-zA-Z]+$/.test(Nombre)) {
             console.log("El nombre del producto debe tener letras")
             Swal.fire({
                 icon: "error",
@@ -45,18 +47,16 @@ function ValidarInformacion() {
             });
             return;
         }
-        if (!/^\d+$/.test(cantidad)) {
+         if (!/^\d+$/.test(cantidad)) {
             Swal.fire({
                 title: "La cantidad del producto debe contener numeros",
                 icon: "error"
             });
             return;
         }
-        if (!/^\d+$/.test(codigo)) {
-            Swal.fire({
-                title: "El codigo del producto debe contener numeros",
-                icon: "error"
-            });
+        if (!/^[a-zA-Z]+$/.test(categoria)) {
+            console.log("La Categoria debe contener letras")
+            Swal.fire("La categoria debe tener letras");
             return;
         }
         if (!/^[a-zA-Z]+$/.test(marca)) {

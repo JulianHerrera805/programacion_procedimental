@@ -2,7 +2,7 @@ function ValidarInformacion() {
     let nombre = document.getElementById("nombre").value;
     let email = document.getElementById("email").value;
     let numeroCelular = document.getElementById("numeroCelular").value;
-    let fechaNacimiento = document.getElementById("fechaN").value;
+    let fechaNacimiento = document.getElementById("fechaN").value; //em html
     let direccion = document.getElementById("direccion").value;
     let contrasena = document.getElementById("contraseña").value;
 
@@ -37,28 +37,29 @@ function ValidarInformacion() {
             showConfirmButton: false,
             timer: 1500
         });
-    }
-    if (!/^[a-zA-Z]+$/.test(nombre)) {
-        console.log("El nombre debe tener letras")
-        Swal.fire({
-            icon: "error",
-            text: "El nombre debe tener letras"
-        })
-        return;
-    }
-     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        Swal.fire({
-            title: "Ingrese un correo electrónico válido",
-            icon: "error"
-        });
-        return;
-    }
-     if (!/^\d+$/.test(numeroCelular)) {
-        Swal.fire({
-            title: "El telefono debe contener numeros",
-            icon: "error"
-        });
-        return;
+
+        if (/^[a-zA-Z]+$/.test(nombre)) {
+            console.log("El nombre debe tener letras")
+            Swal.fire({
+                icon: "error",
+                text: "El nombre debe tener letras"
+            })
+            return;
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            Swal.fire({
+                title: "Ingrese un correo electrónico válido",
+                icon: "error"
+            });
+            return;
+        }
+        if (!/^\d+$/.test(numeroCelular)) {
+            Swal.fire({
+                title: "El telefono debe contener numeros",
+                icon: "error"
+            });
+            return;
+        }
     }
 }
 
